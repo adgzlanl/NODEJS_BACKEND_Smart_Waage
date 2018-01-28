@@ -106,13 +106,14 @@ app.post('/anmelden',jsonParser, function(request, response) {
             });
    });
   /******************************************************************************************************************** */
-  app.post('/Hinzufeugen',jsonParser, function(request, response) {
+  app.get('/Hinzufeugen', function(request, response) {
+
   
-    var email=request.body.email;
-    var kenntwort=request.body.password;
-    var gereatID=request.body.deviceID;
-    var thema=request.body.topic;
-    var nahricht=request.body.message;
+    var email="gulcinadiguzel@outlook.com";
+    var kenntwort="2515seyda";
+    var gereatID="123456789asd-asd9asd9-asd8876";
+    var thema=request.query.topic;
+    var nahricht=request.query.message;
   
 
           Tabelle.findOne({Email: email, Kenntwort: kenntwort}).then(function(record){
@@ -128,7 +129,7 @@ app.post('/anmelden',jsonParser, function(request, response) {
               else
               {
                 console.log('Datei wurde Erfolgreich hinzugefügt');
-                response.json({success:true});
+                response.send("OK");
               }
 
             });
