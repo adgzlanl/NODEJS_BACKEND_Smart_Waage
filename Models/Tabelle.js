@@ -22,7 +22,7 @@ var Tabelle = new Schema({
 		Token				 :  { type: String                                },
         Gereatsinfo          :  [Gereatsinfo]
    
-   });
+   },{toJSON:{getters:true}});
 
 
    
@@ -30,3 +30,4 @@ var Tabelle = new Schema({
    var xxx = mongoose.model('Tabelleliste', Tabelle);
    module.exports = xxx;
    
+
