@@ -152,7 +152,37 @@ app.post('/anmelden',jsonParser, function(request, response) {
 
 
 
+/**************************************************************************** */
+app.post('/lesen',jsonParser, function(request, response) {
+  
+  var email=request.body.email;
+  var kenntwort=request.body.password;
 
+  Tabelle.findOne({Email: email, Kenntwort: kenntwort}, function(err,newTable){
+
+              if(err) {
+                console.log(err);
+                return
+              }
+              else
+              {
+                if(newTable)
+
+                {
+                  response.json({success:true,message:true});
+                  
+                }
+
+                else
+                {
+                  response.json(newTable);
+                }
+              }            
+
+
+          });
+
+  });
    
    /******************************************************************************************************************** */
   app.listen(app.get('port'), function() {
