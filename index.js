@@ -165,19 +165,11 @@ app.post('/lesen',jsonParser, function(request, response) {
                 return
               }
               else
-              {
-                if(newTable)
-
-                {
-                  response.json({success:true,message:true});
-                  
-                }
-
-                else
+            
                 {
                   response.json(newTable);
                 }
-              }            
+                         
 
 
           });
