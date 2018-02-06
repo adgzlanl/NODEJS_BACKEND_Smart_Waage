@@ -119,7 +119,7 @@ app.post('/anmelden',jsonParser, function(request, response) {
             });
    });
   /******************************************************************************************************************** */
-  app.get('/hinzufeugen', function(request, response) {
+  app.post('/hinzufeugen', function(request, response) {
 
   
     var email=request.query.email;
