@@ -122,11 +122,11 @@ app.post('/anmelden',jsonParser, function(request, response) {
   app.post('/hinzufeugen', function(request, response) {
 
   
-    var email=request.query.email;
-    var kenntwort=request.query.password;
+    var email=request.body.email;
+    var kenntwort=request.body.password;
     var gereatID="123456789asd-asd9asd9-asd8876";
-    var thema=request.query.topic;
-    var nahricht=request.query.message;
+    var thema=request.body.topic;
+    var nahricht=request.body.message;
   
 
           Tabelle.findOne({Email: email, Kenntwort: kenntwort}).then(function(record){
