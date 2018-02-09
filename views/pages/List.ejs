@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DataTables </title>
+</head>
+<body>
+
+	<table>
+		<tr>
+		  <th>email</th><th>Kenntwort</th>
+		</tr>
+	  
+		<% for (var x = 0; x < User.length; x++) { %>
+		  <tr>
+			<td><%= User[x].Email %></td>
+			<td><%= User[x].Kenntwort %></td>
+			<tr>
+					<tr>
+							<th>Device Gerät ID</th><th>Thema</th><th>Nachricht</th><th>Datum</th>
+					</tr>
+			    <% for (var y = 0; y < Gereat.length; y++) { %>
+				<td><%= Gereat[y].Thema %></td>
+				<td><%= Gereat[y].Nahricht %></td>
+				<td><%= Gereat[y].Datum %></td>
+				<% } %>
+			</tr>
+		  </tr>    
+		<% } %>
+	  </table>
+ 
+</body>
+</html>
